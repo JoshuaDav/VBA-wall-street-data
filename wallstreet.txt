@@ -6,10 +6,10 @@ Sub Wallstreet()
   For Each ws In Worksheets
     row = 2
     volume = ws.Range("G2")
-    ws.Range("I1") = "Ticker
+    ws.Range("I1") = "Ticker"
     ws.Range("J1") = "Total Stock Volume"
   
-  LastRow = ws.Cells(Rows.Count, 1).End(x1Up).Row
+  LastRow = ws.Cells(Rows.Count, 1).End(x1Up).row
   
   For i = 2 To LastRow
 
