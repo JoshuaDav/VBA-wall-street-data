@@ -1,0 +1,28 @@
+Sub Wallstreet()
+
+  Dim row As Integer
+  Dim volume As Double
+
+  For Each ws In Worksheets
+    row = 2
+    volume = ws.Range("G2")
+    ws.Range("I1") = "Ticker
+    ws.Range("J1") = "Total Stock Volume"
+  
+  LastRow = ws.Cells(Rows.Count, 1).End(x1Up).Row
+  
+  For i = 2 To LastRow
+
+    If (ws.Range("A" & (i + 1) <> ws.Range("A" & i)) Then
+      ws.Range("I" & row).value = ws.Cells(i, 1).value
+      ws.Range("J" & row).value = volume
+      volume = row + 1
+    Else
+      volume = volume + ws.Range("G" & i).value
+    End If
+  
+  Next i
+
+  Next ws
+
+End Sub
